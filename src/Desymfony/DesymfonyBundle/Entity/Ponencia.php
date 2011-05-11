@@ -32,7 +32,7 @@ class Ponencia
     /**
      * @orm:Column(type="text")
      */
-    protected $descriptcion;
+    protected $descripcion;
 
     /**
      * @orm:Column(type="datetime")
@@ -58,8 +58,8 @@ class Ponencia
     /**
      * @orm:ManyToMany(targetEntity="Usuario", inversedBy="ponencias")
      * @orm:JoinTable(name="ponencia_usuario",
-     *      joinColumns={@orm:JoinColumn(name="usuario_id", referencedColumnName="id")},
-     *      inverseJoinColumns={@orm:JoinColumn(name="ponencia_id", referencedColumnName="id")}
+     *      joinColumns={@orm:JoinColumn(name="ponencia_id", referencedColumnName="id")},
+     *      inverseJoinColumns={@orm:JoinColumn(name="usuario_id", referencedColumnName="id")}
      * )
      */
     protected $usuarios;
@@ -121,23 +121,23 @@ class Ponencia
     }
 
     /**
-     * Set descriptcion
+     * Set descripcion
      *
-     * @param text $descriptcion
+     * @param text $descripcion
      */
-    public function setDescriptcion($descriptcion)
+    public function setDescripcion($descripcion)
     {
-        $this->descriptcion = $descriptcion;
+        $this->descripcion = $descripcion;
     }
 
     /**
-     * Get descriptcion
+     * Get descripcion
      *
-     * @return text $descriptcion
+     * @return text $descripcion
      */
-    public function getDescriptcion()
+    public function getDescripcion()
     {
-        return $this->descriptcion;
+        return $this->descripcion;
     }
 
     /**
