@@ -31,13 +31,21 @@ class AdminPonenciaController extends Controller
             if ($formulario->isValid()) {
                 $em->persist($ponencia);
                 $em->flush();
-
-                return $this->redirect($this->generateUrl('admin_ponencia_list'));
+                
+                $peticion->getSession()->setFlash('notice', 'Se ha creado correctamente la ponencia');
+                
+                return $this->redirect($this->generateUrl('admin_ponencia_edit', array(
+                    'id' => $ponencia->getId()
+                )));
             }
         }
 
         return $this->render('DesymfonyBundle:AdminPonencia:new.html.twig', array(
+<<<<<<< HEAD
             'formulario' => $formulario->createView(),
+=======
+            'formulario' => $formulario->createView()
+>>>>>>> be747b2... issue #49 - Después de las pruebas realizadas, no se refactoriza ni el controlador ni las plantillas de las acciones `new` y `edit`. Desde el punto de vista del código el resultado es mejor, pero la fusión de las dos acciones complica bastante su desarrollo y explicación.
         ));
     }
     
