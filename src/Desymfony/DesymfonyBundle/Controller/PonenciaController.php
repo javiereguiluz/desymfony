@@ -13,7 +13,8 @@ class PonenciaController extends Controller
 {
     public function indexAction()
     {
-        $ponencias = $this->entidad('Ponencia')->findAll();
+        $em = $this->get('doctrine')->getEntityManager();
+        $ponencias = $em->getRepository('DesymfonyBundle:Ponencia')->findAll();
 
         return $this->render('DesymfonyBundle:Ponencia:index.html.twig', array(
             'ponencias' => $ponencias
