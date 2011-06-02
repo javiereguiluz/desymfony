@@ -4,7 +4,10 @@
 {% block pageid 'ponentes' %}
 
 {% block body %}
+<<<<<<< HEAD
 
+=======
+>>>>>>> 5019a5d... Issue #64 Creado el filtro auto_link_text e Issue #19 creadas pruebas unitarias para probar el filtro
     <h1>PONENTES</h1>
     {% for ponente in ponentes %}
         <div class="grid_9 alpha">
@@ -12,7 +15,10 @@
             <p>{{ ponente.biografia|auto_link_text|raw }}</p>
             <p>Imparte las siguientes ponencias</p>
             <ul>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 5019a5d... Issue #64 Creado el filtro auto_link_text e Issue #19 creadas pruebas unitarias para probar el filtro
             {% for ponencia in ponente.ponencias %}
             <li>
                 <a href="{{ path('ponencia', { 'slug': ponencia.slug})  }}">{{ ponencia.titulo }}</a>
